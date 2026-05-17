@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "GGG",
+    "GDG",
+    "GGG"
+  ],
+  "key": {
+    "G": "minecraft:gold_block",
+    "D": "tonten:diamond_tonkachi"
+  },
+  "result": {
+    "id": "tonten:solidify_space_block",
+    "count": 1
+  }
+}

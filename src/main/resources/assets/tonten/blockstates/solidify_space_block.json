@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "tonten:block/solidify_space_block"
+    }
+  }
+}

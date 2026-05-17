@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "tonten:block/utsusemi_block"
+    },
+    "age=1": {
+      "model": "tonten:block/utsusemi_block_fade_50"
+    },
+    "age=2": {
+      "model": "tonten:block/utsusemi_block_fade_20"
+    }
+  }
+}

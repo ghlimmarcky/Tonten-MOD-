@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "PPP",
+    "PWP",
+    "PPP"
+  ],
+  "key": {
+    "P": "minecraft:paper",
+    "W": "tonten:wooden_tonkachi"
+  },
+  "result": {
+    "id": "tonten:utsusemi_block",
+    "count": 1
+  }
+}

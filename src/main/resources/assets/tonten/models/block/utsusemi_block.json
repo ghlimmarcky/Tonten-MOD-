@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "tonten:block/utsusemi_block_bottom",
+    "side": "tonten:block/utsusemi_block_side",
+    "top": "tonten:block/utsusemi_block_top"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "tools",
+  "pattern": [
+    "MMM",
+    " L ",
+    " L "
+  ],
+  "key": {
+    "M": "minecraft:iron_ingot",
+    "L": "#minecraft:logs"
+  },
+  "result": {
+    "id": "tonten:iron_tonkachi",
+    "count": 1
+  }
+}
