@@ -8,14 +8,14 @@
   ],
   "key": {
     "M": {
-      "item": "minecraft:diamond"
+      "item": "minecraft:copper_ingot"
     },
     "L": {
       "tag": "minecraft:logs"
     }
   },
   "result": {
-    "id": "tonten:diamond_tonkachi",
+    "id": "tonten:cupper_tonkachi",
     "count": 1
   }
 }

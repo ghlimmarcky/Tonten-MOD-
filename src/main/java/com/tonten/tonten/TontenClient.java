@@ -6,7 +6,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.InputEvent;
-import net.neoforged.neoforge.client.network.ClientPacketDistributor;
+import net.neoforged.neoforge.network.PacketDistributor;
 import org.lwjgl.glfw.GLFW;
 
 @EventBusSubscriber(modid = Tonten.MODID, value = Dist.CLIENT)
@@ -27,12 +27,12 @@ public final class TontenClient {
         }
 
         int direction = event.getScrollDeltaY() > 0.0D ? 1 : -1;
-        ClientPacketDistributor.sendToServer(new TontenNetwork.CycleModePayload(direction));
+        PacketDistributor.sendToServer(new TontenNetwork.CycleModePayload(direction));
         event.setCanceled(true);
     }
 
     private static boolean isControlDown(Minecraft minecraft) {
-        long window = minecraft.getWindow().handle();
+        long window = minecraft.getWindow().getWindow();
         return GLFW.glfwGetKey(window, GLFW.GLFW_KEY_LEFT_CONTROL) == GLFW.GLFW_PRESS
                 || GLFW.glfwGetKey(window, GLFW.GLFW_KEY_RIGHT_CONTROL) == GLFW.GLFW_PRESS;
     }

@@ -3,7 +3,9 @@ package com.tonten.tonten;
 public enum TonkachiTier {
     WOOD(1, 5, false),
     STONE(3, 10, false),
+    COPPER(3, 15, false),
     IRON(5, 20, false),
+    GOLD(5, 25, false),
     DIAMOND(7, 30, true);
 
     private final int flatSize;

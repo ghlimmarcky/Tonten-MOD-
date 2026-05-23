@@ -1,17 +1,22 @@
-{
+﻿{
   "type": "minecraft:crafting_shaped",
-  "category": "tools",
+  "category": "equipment",
   "pattern": [
     "MMM",
     " L ",
     " L "
   ],
   "key": {
-    "M": "#minecraft:planks",
-    "L": "#minecraft:logs"
+    "M": {
+      "tag": "minecraft:planks"
+    },
+    "L": {
+      "tag": "minecraft:logs"
+    }
   },
   "result": {
     "id": "tonten:wooden_tonkachi",
     "count": 1
   }
 }
+

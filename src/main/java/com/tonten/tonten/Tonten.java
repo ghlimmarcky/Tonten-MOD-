@@ -11,6 +11,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.SoundType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -35,36 +36,44 @@ public class Tonten {
     public static final DeferredBlock<UtsusemiBlock> UTSUSEMI_BLOCK = BLOCKS.registerBlock(
             "utsusemi_block",
             UtsusemiBlock::new,
-            properties -> properties.strength(0.2F, 0.2F).sound(SoundType.WOOD));
+            BlockBehaviour.Properties.of().strength(0.2F, 0.2F).sound(SoundType.WOOD));
     public static final DeferredItem<BlockItem> UTSUSEMI_BLOCK_ITEM = ITEMS.registerItem(
             "utsusemi_block",
             properties -> new UtsusemiBlockItem(UTSUSEMI_BLOCK.get(), properties),
-            properties -> properties.durability(300).repairable(ItemTags.LOGS).enchantable(5).fireResistant());
+            new Item.Properties().durability(300).fireResistant());
     public static final DeferredBlock<SolidifySpaceBlock> SOLIDIFY_SPACE_BLOCK = BLOCKS.registerBlock(
             "solidify_space_block",
             SolidifySpaceBlock::new,
-            properties -> properties.strength(1.0F, 1.0F).sound(SoundType.GLASS).lightLevel(state -> 15));
+            BlockBehaviour.Properties.of().strength(1.0F, 1.0F).sound(SoundType.GLASS).lightLevel(state -> 15));
     public static final DeferredItem<BlockItem> SOLIDIFY_SPACE_BLOCK_ITEM = ITEMS.registerItem(
             "solidify_space_block",
             properties -> new SolidifySpaceBlockItem(SOLIDIFY_SPACE_BLOCK.get(), properties),
-            properties -> properties.durability(500).repairable(Items.GOLD_INGOT).enchantable(5).fireResistant());
+            new Item.Properties().durability(500).fireResistant());
 
     public static final DeferredItem<TonkachiItem> WOODEN_TONKACHI = ITEMS.registerItem(
             "wooden_tonkachi",
             properties -> new TonkachiItem(TonkachiTier.WOOD, properties),
-            properties -> properties.durability(96).repairable(net.minecraft.tags.ItemTags.LOGS).enchantable(5));
+            new Item.Properties().durability(96));
     public static final DeferredItem<TonkachiItem> STONE_TONKACHI = ITEMS.registerItem(
             "stone_tonkachi",
             properties -> new TonkachiItem(TonkachiTier.STONE, properties),
-            properties -> properties.durability(192).repairable(Items.COBBLESTONE).enchantable(8));
+            new Item.Properties().durability(192));
+    public static final DeferredItem<TonkachiItem> COPPER_TONKACHI = ITEMS.registerItem(
+            "cupper_tonkachi",
+            properties -> new TonkachiItem(TonkachiTier.COPPER, properties),
+            new Item.Properties().durability(256));
     public static final DeferredItem<TonkachiItem> IRON_TONKACHI = ITEMS.registerItem(
             "iron_tonkachi",
             properties -> new TonkachiItem(TonkachiTier.IRON, properties),
-            properties -> properties.durability(384).repairable(Items.IRON_INGOT).enchantable(14));
+            new Item.Properties().durability(384));
+    public static final DeferredItem<TonkachiItem> GOLDEN_TONKACHI = ITEMS.registerItem(
+            "golden_tonkachi",
+            properties -> new TonkachiItem(TonkachiTier.GOLD, properties),
+            new Item.Properties().durability(128));
     public static final DeferredItem<TonkachiItem> DIAMOND_TONKACHI = ITEMS.registerItem(
             "diamond_tonkachi",
             properties -> new TonkachiItem(TonkachiTier.DIAMOND, properties),
-            properties -> properties.durability(768).repairable(Items.DIAMOND).enchantable(10));
+            new Item.Properties().durability(768));
     public static final DeferredItem<Item> TONTEN_ICON = ITEMS.registerSimpleItem("tonten_icon");
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TONTEN_TAB = CREATIVE_MODE_TABS.register("tonten_tab", () -> CreativeModeTab.builder()
@@ -74,7 +83,9 @@ public class Tonten {
             .displayItems((parameters, output) -> {
                 output.accept(WOODEN_TONKACHI.get());
                 output.accept(STONE_TONKACHI.get());
+                output.accept(COPPER_TONKACHI.get());
                 output.accept(IRON_TONKACHI.get());
+                output.accept(GOLDEN_TONKACHI.get());
                 output.accept(DIAMOND_TONKACHI.get());
                 output.accept(UTSUSEMI_BLOCK_ITEM.get());
                 output.accept(SOLIDIFY_SPACE_BLOCK_ITEM.get());

@@ -1,17 +1,22 @@
-{
+﻿{
   "type": "minecraft:crafting_shaped",
-  "category": "tools",
+  "category": "equipment",
   "pattern": [
     "MMM",
     " L ",
     " L "
   ],
   "key": {
-    "M": "minecraft:cobblestone",
-    "L": "#minecraft:logs"
+    "M": {
+      "item": "minecraft:cobblestone"
+    },
+    "L": {
+      "tag": "minecraft:logs"
+    }
   },
   "result": {
     "id": "tonten:stone_tonkachi",
     "count": 1
   }
 }
+
