@@ -19,14 +19,14 @@ public class UtsusemiBlock extends Block {
     }
 
     @Override
-    protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
+    public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
         if (!level.isClientSide() && !state.is(oldState.getBlock())) {
             level.scheduleTick(pos, this, FADE_INTERVAL_TICKS);
         }
     }
 
     @Override
-    protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         BlockState currentState = level.getBlockState(pos);
         if (!currentState.is(this)) {
             return;

@@ -2,11 +2,10 @@ package com.tonten.tonten;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.client.event.InputEvent;
-import net.neoforged.neoforge.client.network.ClientPacketDistributor;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.InputEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import org.lwjgl.glfw.GLFW;
 
 @EventBusSubscriber(modid = Tonten.MODID, value = Dist.CLIENT)
@@ -26,13 +25,13 @@ public final class TontenClient {
             return;
         }
 
-        int direction = event.getScrollDeltaY() > 0.0D ? 1 : -1;
-        ClientPacketDistributor.sendToServer(new TontenNetwork.CycleModePayload(direction));
+        int direction = event.getScrollDelta() > 0.0D ? 1 : -1;
+        TontenNetwork.CHANNEL.sendToServer(new TontenNetwork.CycleModePayload(direction));
         event.setCanceled(true);
     }
 
     private static boolean isControlDown(Minecraft minecraft) {
-        long window = minecraft.getWindow().handle();
+        long window = minecraft.getWindow().getWindow();
         return GLFW.glfwGetKey(window, GLFW.GLFW_KEY_LEFT_CONTROL) == GLFW.GLFW_PRESS
                 || GLFW.glfwGetKey(window, GLFW.GLFW_KEY_RIGHT_CONTROL) == GLFW.GLFW_PRESS;
     }

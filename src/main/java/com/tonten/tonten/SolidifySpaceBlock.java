@@ -13,14 +13,14 @@ public class SolidifySpaceBlock extends Block {
     }
 
     @Override
-    protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
+    public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
         if (!level.isClientSide() && !state.is(oldState.getBlock())) {
             level.scheduleTick(pos, this, TontenConfig.SOLIDIFY_SPACE_BLOCK_LIFETIME_TICKS.get());
         }
     }
 
     @Override
-    protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         if (level.getBlockState(pos).is(this)) {
             level.removeBlock(pos, false);
         }
