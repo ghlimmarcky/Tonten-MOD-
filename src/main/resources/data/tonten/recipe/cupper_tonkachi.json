@@ -1,0 +1,21 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "MMM",
+    " L ",
+    " L "
+  ],
+  "key": {
+    "M": {
+      "item": "minecraft:copper_ingot"
+    },
+    "L": {
+      "tag": "minecraft:logs"
+    }
+  },
+  "result": {
+    "id": "tonten:cupper_tonkachi",
+    "count": 1
+  }
+}

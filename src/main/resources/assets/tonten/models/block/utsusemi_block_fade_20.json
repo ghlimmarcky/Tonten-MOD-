@@ -1,9 +1,7 @@
 {
-  "parent": "minecraft:block/cube_bottom_top",
+  "parent": "minecraft:block/cube_all",
   "render_type": "minecraft:translucent",
   "textures": {
-    "bottom": "tonten:block/utsusemi_block_bottom_20",
-    "side": "tonten:block/utsusemi_block_side_20",
-    "top": "tonten:block/utsusemi_block_top_20"
+    "all": "tonten:block/utsusemi_block_20"
   }
 }

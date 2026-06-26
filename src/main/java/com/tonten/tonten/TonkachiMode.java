@@ -7,15 +7,23 @@ public enum TonkachiMode {
     VERTICAL("vertical"),
     VERTICAL_UP("vertical_up"),
     VERTICAL_DOWN("vertical_down"),
+    VERTICAL_LEFT("vertical_left"),
+    VERTICAL_RIGHT("vertical_right"),
     STAIRS("stairs"),
     EXTEND("extend"),
+    SPACING("spacing"),
+    RANDOM("random"),
     UPSIDE_DOWN("upside_down"),
     ROTATE("rotate"),
-    AIR("air");
+    FRAME("frame"),
+    AIR("air"),
+    CYLINDER_FRAME("cylinder_frame");
 
-    private static final TonkachiMode[] DIAMOND_MODES = { FLAT, VERTICAL, STAIRS, EXTEND, AIR };
+    private static final TonkachiMode[] DIAMOND_MODES = { FLAT, VERTICAL, STAIRS, EXTEND, AIR, CYLINDER_FRAME };
     private static final TonkachiMode[] IRON_MODES = { FLAT, VERTICAL, VERTICAL_UP, VERTICAL_DOWN, STAIRS, EXTEND };
+    private static final TonkachiMode[] GOLD_MODES = { FLAT, VERTICAL, VERTICAL_LEFT, VERTICAL_RIGHT, STAIRS, EXTEND, FRAME };
     private static final TonkachiMode[] STONE_MODES = { FLAT, VERTICAL, STAIRS, EXTEND, UPSIDE_DOWN, ROTATE };
+    private static final TonkachiMode[] COPPER_MODES = { FLAT, VERTICAL, STAIRS, EXTEND, SPACING, RANDOM };
     private static final TonkachiMode[] STANDARD_MODES = { FLAT, VERTICAL, STAIRS, EXTEND };
     private static final TonkachiMode[] WOOD_MODES = { VERTICAL, STAIRS, EXTEND };
     private final String key;
@@ -50,6 +58,12 @@ public enum TonkachiMode {
         }
         if (tier == TonkachiTier.IRON) {
             return IRON_MODES;
+        }
+        if (tier == TonkachiTier.GOLD) {
+            return GOLD_MODES;
+        }
+        if (tier == TonkachiTier.COPPER) {
+            return COPPER_MODES;
         }
         if (tier == TonkachiTier.STONE) {
             return STONE_MODES;

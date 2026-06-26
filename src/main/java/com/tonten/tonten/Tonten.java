@@ -35,7 +35,7 @@ public class Tonten {
     public static final DeferredBlock<UtsusemiBlock> UTSUSEMI_BLOCK = BLOCKS.registerBlock(
             "utsusemi_block",
             UtsusemiBlock::new,
-            properties -> properties.strength(0.2F, 0.2F).sound(SoundType.WOOD));
+            properties -> properties.strength(0.2F, 0.2F).sound(SoundType.WOOD).noOcclusion());
     public static final DeferredItem<BlockItem> UTSUSEMI_BLOCK_ITEM = ITEMS.registerItem(
             "utsusemi_block",
             properties -> new UtsusemiBlockItem(UTSUSEMI_BLOCK.get(), properties),
@@ -43,7 +43,7 @@ public class Tonten {
     public static final DeferredBlock<SolidifySpaceBlock> SOLIDIFY_SPACE_BLOCK = BLOCKS.registerBlock(
             "solidify_space_block",
             SolidifySpaceBlock::new,
-            properties -> properties.strength(1.0F, 1.0F).sound(SoundType.GLASS).lightLevel(state -> 15));
+            properties -> properties.strength(1.0F, 1.0F).sound(SoundType.GLASS).lightLevel(state -> 15).noOcclusion());
     public static final DeferredItem<BlockItem> SOLIDIFY_SPACE_BLOCK_ITEM = ITEMS.registerItem(
             "solidify_space_block",
             properties -> new SolidifySpaceBlockItem(SOLIDIFY_SPACE_BLOCK.get(), properties),
@@ -57,10 +57,18 @@ public class Tonten {
             "stone_tonkachi",
             properties -> new TonkachiItem(TonkachiTier.STONE, properties),
             properties -> properties.durability(192).repairable(Items.COBBLESTONE).enchantable(8));
+    public static final DeferredItem<TonkachiItem> CUPPER_TONKACHI = ITEMS.registerItem(
+            "cupper_tonkachi",
+            properties -> new TonkachiItem(TonkachiTier.COPPER, properties),
+            properties -> properties.durability(256).repairable(Items.COPPER_INGOT).enchantable(10));
     public static final DeferredItem<TonkachiItem> IRON_TONKACHI = ITEMS.registerItem(
             "iron_tonkachi",
             properties -> new TonkachiItem(TonkachiTier.IRON, properties),
             properties -> properties.durability(384).repairable(Items.IRON_INGOT).enchantable(14));
+    public static final DeferredItem<TonkachiItem> GOLDEN_TONKACHI = ITEMS.registerItem(
+            "golden_tonkachi",
+            properties -> new TonkachiItem(TonkachiTier.GOLD, properties),
+            properties -> properties.durability(256).repairable(Items.GOLD_INGOT).enchantable(22));
     public static final DeferredItem<TonkachiItem> DIAMOND_TONKACHI = ITEMS.registerItem(
             "diamond_tonkachi",
             properties -> new TonkachiItem(TonkachiTier.DIAMOND, properties),
@@ -74,7 +82,9 @@ public class Tonten {
             .displayItems((parameters, output) -> {
                 output.accept(WOODEN_TONKACHI.get());
                 output.accept(STONE_TONKACHI.get());
+                output.accept(CUPPER_TONKACHI.get());
                 output.accept(IRON_TONKACHI.get());
+                output.accept(GOLDEN_TONKACHI.get());
                 output.accept(DIAMOND_TONKACHI.get());
                 output.accept(UTSUSEMI_BLOCK_ITEM.get());
                 output.accept(SOLIDIFY_SPACE_BLOCK_ITEM.get());

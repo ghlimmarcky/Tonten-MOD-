@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "tonten:wooden_tonkachi",
+    "tonten:stone_tonkachi",
+    "tonten:cupper_tonkachi",
+    "tonten:iron_tonkachi",
+    "tonten:golden_tonkachi",
+    "tonten:diamond_tonkachi"
+  ]
+}
